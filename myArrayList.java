@@ -127,7 +127,12 @@ public class myArrayList {
 }
 
 class MyOwnException extends Exception {
-   public MyOwnException(String msg){
+   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public MyOwnException(String msg){
       super(msg);
    }
 }

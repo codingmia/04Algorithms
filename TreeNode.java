@@ -1,4 +1,4 @@
-
+//A node class which will be used in multiple tree manipulation.
 public class TreeNode {
 	int val;
 	TreeNode left;

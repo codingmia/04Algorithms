@@ -29,7 +29,7 @@ public class myStack {
 		}
 	}
 }
-
+//Uncomment following and replace it in Solution.java for test
 /*myStack my = new myStack();
 		//2-3-4
 		ListNode t4 = new ListNode(2);

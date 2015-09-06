@@ -1,4 +1,4 @@
-
+//A node class which will be used in linkedlist manipulation.
 public class ListNode {
 	int val;
 	ListNode next;
