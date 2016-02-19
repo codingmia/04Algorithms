@@ -1,0 +1,39 @@
+======================================================
+Question 1:
+
+Quick-find, (p-q, change id[p])
+
+	0 1 2 3 4 5 6 7 8 9
+
+0-9 9 1 2 3 4 5 6 7 8 9
+3-6 9 1 2 6 4 5 6 7 8 9
+2-7 9 1 7 6 4 5 6 7 8 9
+4-9 9 1 7 6 9 5 6 7 8 9
+
+3-7 9 1 7 7 9 5 7 7 8 9 use 7 as root
+9-1 1 1 7 7 1 5 7 7 8 1
+
+======================================================
+Question 2:
+Weighted quick-union, 
+2-5 0-1 2-0 6-4 4-9 4-8 6-3 3-0 2-7
+only change the root, take p as the root
+	 
+	 0 1 2 3 4 5 6 7 8 9
+
+2-5, 0 1 2 3 4 2 6 7 8 9 use 2 as root, size = 2
+0-1, 0 0 2 3 4 2 6 7 8 9 use 0 as root, size = 2
+2-0, 2 0 2 3 4 2 6 7 8 9 append second (0) to first (2)
+6-4, 2 0 2 3 6 2 6 7 8 9
+4-9, 2 0 2 3 6 2 6 7 8 6 change 9 root to root of 4
+4-8, 2 0 2 3 6 2 6 7 6 6 
+6-3, 2 0 2 6 6 2 6 7 6 6
+
+3-0, 2 0 6 6 6 2 6 7 6 6 the root of 0 is 2, change 2's root to 6
+2-7, 2 0 6 6 6 2 6 6 6 6 
+
+======================================================
+Question 3:
+Height of forest should <= lgN
+id[] array shouldn't have cycle
+size of tree rooted at parent of x should >= twice the size of tree rooted at x

@@ -1,0 +1,52 @@
+- Quick Find is to slow for big data
+- Quick-union
+	- trees may get tall
+	- find could be linear time
+- Weighted Quick Union
+	- append smaller tree to bigger tree
+
+
+
+# Quick Union
+
+private int root(int i){
+	while(i != id[i]) i = id[i];
+	return i;
+}
+
+public boolean connected (int p, int q){
+	return root(p) == root(q);
+}
+
+
+public void union(int p, int q){
+	int i = root(p);
+	int j = root(q);
+	id[i] = j; //change root of p to root of q
+}
+
+
+# Weighted quick union:
+- sz array to count number of objects root at i
+- find
+	return root(p) == root(q)
+- union
+	int i = root(p)
+	int j = root(q)
+	if i == j return
+	if sz[i] < sz[j] {
+		id[i] = j;
+		sz[j] += sz[i];
+	}else{
+		id[j] = i;
+		sz[i] += sz[j];
+	}
+- performance analysis (logN for union and connected)
+
+- a couple improvements with path compression
+
+- union by size, union by height, union by rank: the first two guarantees logN
+
+
+# Application
+- Percolation
